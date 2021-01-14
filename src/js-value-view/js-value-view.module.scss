@@ -1,0 +1,22 @@
+@import './var';
+
+.valueView {
+  font-size: 12px;
+  line-height: inherit;
+  font-family: "Source Code Pro", monospace;
+  color: $defaultColor;
+}
+
+.string {
+  color: $stringColor;
+}
+
+.number,
+.boolean {
+  color: $numberColor;
+}
+
+.null,
+.undefined {
+  color: $nullColor;
+}
