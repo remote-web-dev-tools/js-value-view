@@ -1,0 +1,35 @@
+$numberColor: #1b27ce;
+$booleanColor: $numberColor;
+$nullColor: #5f5f5f;
+$undefinedColor: $nullColor;
+$stringColor: #cc1d18;
+$keyColor: #93229c;
+$readonlyKeyColor: rgba(148, 14, 157, 0.4);
+
+$defaultColor: #252525;
+
+$symbolSpace: 8px;
+
+@mixin details {
+  padding: 5px 0 0 16px;
+
+  .key {
+    color: $keyColor;
+  }
+
+  .colon {
+    margin-right: $symbolSpace;
+  }
+
+  .readonly-key {
+    align-self: center;
+    color: $readonlyKeyColor;
+  }
+}
+
+@mixin details-item {
+  display: flex;
+  padding: 2px 0;
+  min-height: 20px;
+  line-height: 16px;
+}
