@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './js-value-view.module.scss';
+import ObjectValueView from './object-value-view/object-value-view';
 
 export type ValueType =
   | 'undefined'
@@ -13,16 +14,12 @@ export type ValueType =
   | 'null'
   | 'array';
 
-export interface ViewProps {
+export interface AtomViewProps {
   value: any;
-  valueType?: ValueType;
+  valueType: ValueType;
 }
 
-export interface JsValueViewProps {
-  value: any;
-}
-
-const AtomValueView = (props: Required<ViewProps>) => {
+const AtomValueView = (props: AtomViewProps) => {
   const { value, valueType } = props;
   const [showText, setShowText] = useState<string>('');
 
@@ -47,16 +44,24 @@ const AtomValueView = (props: Required<ViewProps>) => {
   return <span className={styles[valueType]}>{showText}</span>;
 };
 
-const ArrayValueView = (props: ViewProps) => {
+export interface ArrayViewProps {
+  value: any[];
+  summary?: boolean;
+  disabledExpand?: boolean;
+}
+
+const ArrayValueView = (props: ArrayViewProps) => {
   return <div>ArrayValueView Work</div>;
 };
 
-const ObjectValueView = (props: ViewProps) => {
-  return <div>ObjectValueView Work</div>;
-};
+export interface JsValueViewProps {
+  value: any;
+  summary?: boolean;
+  disabledExpand?: boolean;
+}
 
 export default function JsValueView(props: JsValueViewProps) {
-  const { value } = props;
+  const { value, summary = false, disabledExpand = false } = props;
   const [valueType, setValueType] = useState<ValueType>('undefined');
 
   useEffect(() => {
@@ -75,9 +80,9 @@ export default function JsValueView(props: JsValueViewProps) {
 
   let view;
   if (valueType === 'array') {
-    view = <ArrayValueView value={value} />;
+    view = <ArrayValueView value={value} disabledExpand={disabledExpand} summary={summary} />;
   } else if (valueType === 'object') {
-    view = <ObjectValueView value={value} />;
+    view = <ObjectValueView value={value} disabledExpand={disabledExpand} summary={summary} />;
   } else {
     view = <AtomValueView value={value} valueType={valueType} />;
   }
