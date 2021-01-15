@@ -47,7 +47,7 @@ function App() {
       <section>
         <header>Object</header>
         <article>
-          <JsValueView value={{ a: 1, b: '2', c: false, d: null, e: { a: 1 } }} />
+          <JsValueView value={{ a: 1, b: '2', c: false, d: null, e: { a: 1 }, f: [1, { a: 1 }] }} />
         </article>
       </section>
 
