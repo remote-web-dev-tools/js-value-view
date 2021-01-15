@@ -1,9 +1,9 @@
-@import './var';
+@import 'var';
 
 .valueView {
   font-size: 12px;
   line-height: inherit;
-  font-family: "Source Code Pro", monospace;
+  font-family: Consolas, monospace;
   color: $defaultColor;
 }
 

@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './js-value-view.module.scss';
 
-/**
- * 视察过此项目的 B 站观众（你们有够闲）
- *
- * 爬爬仙
- */
-
 export type ValueType =
   | 'undefined'
   | 'object'
