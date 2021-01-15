@@ -50,6 +50,13 @@ function App() {
           <JsValueView value={{ a: 1, b: '2', c: false, d: null, e: { a: 1 } }} />
         </article>
       </section>
+
+      <section>
+        <header>Array</header>
+        <article>
+          <JsValueView value={[1, '2', true, null, undefined, { a: 1 }, [{ a: 1 }]]} />
+        </article>
+      </section>
     </div>
   );
 }
