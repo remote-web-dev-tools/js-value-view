@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from '../index.module.scss';
+import styles from './atom-value-view.module.scss';
 import { ValueType } from '../index';
 
 export interface AtomViewProps {
