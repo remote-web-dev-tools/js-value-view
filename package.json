@@ -1,6 +1,17 @@
 {
   "name": "@rwdt/js-value-view",
   "version": "0.0.0",
+  "description": "JavaScript value view by React",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remote-web-dev-tools/js-value-view.git"
+  },
+  "author": "lleohao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/remote-web-dev-tools/js-value-view/issues"
+  },
+  "homepage": "https://github.com/remote-web-dev-tools/js-value-view#readme",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -45,8 +56,9 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "prepublish": "npm run build",
     "release": "standard-version",
-    "prepublish": "npm run build"
+    "release:alpha": "standard-version --prelease alpha"
   },
   "eslintConfig": {
     "extends": [
@@ -81,15 +93,9 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "description": "JavaScript value view by React",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/remote-web-dev-tools/js-value-view.git"
-  },
-  "author": "lleohao",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/remote-web-dev-tools/js-value-view/issues"
-  },
-  "homepage": "https://github.com/remote-web-dev-tools/js-value-view#readme"
+  "standard-version": {
+    "scripts": {
+      "posttag": "git push --follow-tags origin main && npm publish"
+    }
+  }
 }
