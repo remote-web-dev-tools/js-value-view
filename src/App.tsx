@@ -28,7 +28,7 @@ function App() {
       </section>
 
       <section>
-        <header>null & undefined</header>
+        <header>Null & Undefined</header>
         <article>
           <JsValueView value={null} />
           <JsValueView value={undefined} />
@@ -36,11 +36,18 @@ function App() {
       </section>
 
       <section>
-        <header>string</header>
+        <header>String</header>
         <article>
           <JsValueView value={'null'} />
           <JsValueView value={'undefined'} />
           <JsValueView value={'Hello World'} />
+        </article>
+      </section>
+
+      <section>
+        <header>Object</header>
+        <article>
+          <JsValueView value={{ a: 1, b: '2', c: false, d: null, e: { a: 1 } }} />
         </article>
       </section>
     </div>
