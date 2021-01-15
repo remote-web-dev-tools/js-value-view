@@ -6,17 +6,3 @@
   font-family: Consolas, monospace;
   color: $defaultColor;
 }
-
-.string {
-  color: $stringColor;
-}
-
-.number,
-.boolean {
-  color: $numberColor;
-}
-
-.null,
-.undefined {
-  color: $nullColor;
-}

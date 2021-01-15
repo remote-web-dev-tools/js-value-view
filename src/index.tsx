@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
+
 import ObjectValueView from './object-value-view/object-value-view';
 import ArrayValueView from './array-value-view/array-value-view';
+import AtomValueView from './atom-value-view/atom-value-view';
 
 export type ValueType =
   | 'undefined'
@@ -14,36 +16,6 @@ export type ValueType =
   | 'bigint'
   | 'null'
   | 'array';
-
-export interface AtomViewProps {
-  value: any;
-  valueType: ValueType;
-}
-
-const AtomValueView = (props: AtomViewProps) => {
-  const { value, valueType } = props;
-  const [showText, setShowText] = useState<string>('');
-
-  useEffect(() => {
-    switch (valueType) {
-      case 'string':
-        setShowText(`"${value}"`);
-        break;
-      case 'boolean':
-      case 'number':
-        setShowText(value.toString());
-        break;
-      case 'undefined':
-        setShowText('undefined');
-        break;
-      case 'null':
-        setShowText('null');
-        break;
-    }
-  }, [valueType, value]);
-
-  return <span className={styles[valueType]}>{showText}</span>;
-};
 
 export interface JsValueViewProps {
   value: any;
