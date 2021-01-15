@@ -23,7 +23,7 @@ export interface JsValueViewProps {
   disabledExpand?: boolean;
 }
 
-export default function Index(props: JsValueViewProps) {
+export default function JsValueView(props: JsValueViewProps) {
   const { value, summary = false, disabledExpand = false } = props;
   const [valueType, setValueType] = useState<ValueType>('undefined');
 
