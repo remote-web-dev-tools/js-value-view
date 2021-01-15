@@ -12,6 +12,8 @@ section {
 }
 
 header {
+  margin-bottom: 8px;
+
   font-size: 18px;
   font-weight: bold;
   color: #333;
