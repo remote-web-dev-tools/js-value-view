@@ -1,7 +1,7 @@
 import React, { useMemo, useState, MouseEvent, useEffect } from 'react';
 import styles from './object-value-view.module.scss';
 import classnames from 'classnames';
-import JsValueView from '../js-value-view';
+import Index from '../index';
 
 export interface ObjectViewProps {
   value: Record<string, any>;
@@ -40,7 +40,7 @@ const ObjectValueView = (props: ObjectViewProps) => {
             <span className={styles.key}>{key}</span>
             <span className={styles.colon}>:</span>
             <span className={styles.value}>
-              <JsValueView value={value[key]} summary disabledExpand />
+              <Index value={value[key]} summary disabledExpand />
             </span>
             {i !== keys.length - 1 ? <span className={styles.comma}>,</span> : null}
           </span>
@@ -68,7 +68,7 @@ const ObjectValueView = (props: ObjectViewProps) => {
             <span className={styles.key}>{key}</span>
             <span className={styles.colon}>:</span>
             <span className={styles.value}>
-              <JsValueView value={value[key]} />
+              <Index value={value[key]} />
             </span>
           </div>
         ))}

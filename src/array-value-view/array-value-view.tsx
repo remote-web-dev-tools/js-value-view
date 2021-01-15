@@ -1,7 +1,7 @@
 import React, { MouseEvent, useMemo, useRef, useState } from 'react';
 import classnames from 'classnames';
 import styles from './array-value-view.module.scss';
-import JsValueView from '../js-value-view';
+import Index from '../index';
 
 export interface ArrayViewProps {
   value: any[];
@@ -45,7 +45,7 @@ const ArrayValueView = (props: ArrayViewProps) => {
         <span>[</span>
         {value.map((item, index) => (
           <span className={styles.inlineItem} key={index}>
-            <JsValueView value={item} disabledExpand summary />
+            <Index value={item} disabledExpand summary />
             {index === lengthRef.current - 1 ? null : <span>,</span>}
           </span>
         ))}
@@ -60,7 +60,7 @@ const ArrayValueView = (props: ArrayViewProps) => {
       <span className={styles.key}>{index}</span>
       <span className={styles.colon}>:</span>
       <span className={styles.value}>
-        <JsValueView value={value} />
+        <Index value={value} />
       </span>
     </div>
   );
