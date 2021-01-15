@@ -106,7 +106,7 @@
     (a.o = function (e, r) {
       return Object.prototype.hasOwnProperty.call(e, r);
     }),
-    (a.p = '/'),
+    (a.p = '/js-value-view/'),
     (a.oe = function (e) {
       throw (console.error(e), e);
     });
@@ -117,4 +117,4 @@
   var f = c;
   t();
 })([]);
-//# sourceMappingURL=runtime-main.37ab3a85.js.map
+//# sourceMappingURL=runtime-main.af703412.js.map
