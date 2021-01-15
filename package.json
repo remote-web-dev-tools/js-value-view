@@ -40,10 +40,13 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^3.1.8",
     "rollup-plugin-typescript2": "^0.28.0",
+    "standard-version": "^9.1.0",
     "typescript": "^4.0.3"
   },
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "release": "standard-version",
+    "prepublish": "npm run build"
   },
   "eslintConfig": {
     "extends": [
