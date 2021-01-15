@@ -5,7 +5,10 @@
   cursor: default;
   position: relative;
   padding-left: 8px;
+}
 
+/* Triangle */
+.wrap {
   &::after {
     content: '';
     position: absolute;
@@ -28,7 +31,7 @@
   }
 }
 
-.disabledShowDetails {
+.disabledExpand {
   padding-left: 0;
 
   &::after {
@@ -36,24 +39,27 @@
   }
 }
 
-.inlineView {
+/* Inline layout */
+.inline,
+.inlineItem,
+.summary {
   display: flex;
   font-style: italic;
-
-  .inlineViewItem {
-    display: flex;
-  }
-
-  .colon,
-  .comma {
-    margin-right: $symbolSpace;
-  }
 }
 
-.detailsView {
-  @include details;
+.inlineItem + .inlineItem {
+  margin-left: 8px;
+}
 
-  .detailsViewItem {
-    @include detailsItem;
-  }
+.inlineLength {
+  margin-right: 8px;
+}
+
+/* Expand */
+.details {
+  @include details;
+}
+
+.detailsItem {
+  @include detailsItem;
 }

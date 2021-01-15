@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './js-value-view.module.scss';
 import ObjectValueView from './object-value-view/object-value-view';
+import ArrayValueView from './array-value-view/array-value-view';
 
 export type ValueType =
   | 'undefined'
@@ -42,16 +43,6 @@ const AtomValueView = (props: AtomViewProps) => {
   }, [valueType, value]);
 
   return <span className={styles[valueType]}>{showText}</span>;
-};
-
-export interface ArrayViewProps {
-  value: any[];
-  summary?: boolean;
-  disabledExpand?: boolean;
-}
-
-const ArrayValueView = (props: ArrayViewProps) => {
-  return <div>ArrayValueView Work</div>;
 };
 
 export interface JsValueViewProps {

@@ -1,4 +1,4 @@
-import React, { useMemo, useState, MouseEvent } from 'react';
+import React, { useMemo, useState, MouseEvent, useEffect } from 'react';
 import styles from './object-value-view.module.scss';
 import classnames from 'classnames';
 import JsValueView from '../js-value-view';
@@ -13,6 +13,10 @@ const ObjectValueView = (props: ObjectViewProps) => {
   const { value, disabledExpand, summary } = props;
   const [showDetails, setShowDetails] = useState(false);
   const [keys, setKeys] = useState(Object.keys(value));
+
+  useEffect(() => {
+    setKeys(Object.keys(value));
+  }, [value]);
 
   const handleShowDetails = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
@@ -35,7 +39,7 @@ const ObjectValueView = (props: ObjectViewProps) => {
           <span key={key} className={styles.inlineViewItem}>
             <span className={styles.key}>{key}</span>
             <span className={styles.colon}>:</span>
-            <span className={'value'}>
+            <span className={styles.value}>
               <JsValueView value={value[key]} summary disabledExpand />
             </span>
             {i !== keys.length - 1 ? <span className={styles.comma}>,</span> : null}
@@ -63,7 +67,7 @@ const ObjectValueView = (props: ObjectViewProps) => {
           <div key={key} className={styles.detailsViewItem}>
             <span className={styles.key}>{key}</span>
             <span className={styles.colon}>:</span>
-            <span className={'value'}>
+            <span className={styles.value}>
               <JsValueView value={value[key]} />
             </span>
           </div>
